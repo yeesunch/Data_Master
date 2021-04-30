@@ -198,22 +198,82 @@ Transaction:
 ### SQL Database
 1. Create a new database
 ```
-CREATE DATABASE <dbname>;
+CREATE DATABASE dbname;
 ```
 
-
-
-
-
-Examples
+2. Drop a database
 ```
-1. Create a new database
-CREATE DATABASE <dbname>
-
-2. Delete a database
-DROP DATABASE <dbname>
-
-3. Backup a SQL Server
-
+DROP DATABASE dbname;
 ```
 
+3. Backup a database
+```
+BACKUP DATABASE testDB
+TO DISK = 'D:\backups\testDB.bak';
+```
+
+Back up with differential part
+```
+BACKUP DATABASE testDB
+TO DISK = 'D:\backups\testDB.bak'
+WITH DIFFERENTIAL;
+```
+
+4. Create a new table
+Create new
+```
+CREATE TABLE table_name (
+    column1 datatype,
+    column2 datatype,
+    column3 datatype,
+   ....
+);
+```
+Example:
+```
+CREATE TABLE Persons (
+    PersonID int,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255)
+);
+```
+
+Create from existing
+```
+CREATE TABLE new_table AS
+    SELECT column1, column2,...
+    FROM existing_table
+    WHERE ....;
+```
+Example:
+```
+CREATE TABLE TestTable AS
+SELECT customername, contactname
+FROM customers;
+```
+
+5. Drop a table
+Delete table
+```
+DROP TABLE table_name;
+```
+
+Clear but not delete table
+```
+TRUNCATE TABLE table_name;
+```
+
+6. Alter a table
+Use to add, delete, modity columns or add/drop constraints on an existing table.
+Add column
+```
+ALTER TABLE Customers
+ADD Email varchar(255);
+```
+Drop column
+```
+ALTER TABLE Customers
+DROP COLUMN Email;
+```
