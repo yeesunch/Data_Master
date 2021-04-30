@@ -1,7 +1,7 @@
 # SQL
 # Table of Contents
-1. [Introduction: SQL Basic](#ch1)
-2. [Chapter 2 - Define the Problem](#ch1)
+1. [SQL Basic](#ch1)
+2. [SQL Grammer](#ch2)
 3. [Chapter 2 - Data Collection](#ch2)
 4. [Chapter 3 - Data Preparation](#ch3)
 5. [Chapter 4 - Data Cleansing: 4C Correcting, Completing, Creating, Converting](#ch4)
@@ -101,6 +101,8 @@ Databases -> Tables -> Columns & Rows
 | YEAR()      | YY or YYYY                       | 70 to 69 (from 1970 - 2069) or 1901 to 2155     |
 
 
+
+<a id="ch2"></a>
 ## 2. SQL Grammer
 ### Syntax
 1. Indentation
@@ -176,11 +178,7 @@ Transaction:
 ```
 
 
-
-
-
-
-5. Execution order
+6. Execution order
 
 (8) SELECT (9) DISTINCT <select_list> <br>
 (1) FROM <left_table> <br>
@@ -194,6 +192,19 @@ Transaction:
 (11) LIMIT <limit_number> <br>
 
 
+
+<a id="ch3"></a>
+## 3. SQL Examples
+### SQL Database
+1. Create a new database
+```
+CREATE DATABASE <dbname>;
+```
+
+
+
+
+
 Examples
 ```
 1. Create a new database
@@ -205,90 +216,4 @@ DROP DATABASE <dbname>
 3. Backup a SQL Server
 
 ```
-
-
-引言
- 进行SQL和T-SQL编程时常常会忽略编码标准，但这些标准却是开发小组顺利开展工作的关键工具，SQL和T-SQL代码的格式似乎并不重要，但一致的格式可以使您的同事（不论是同一小组的成员还是更大范围的SQL和T-SQL开发团队的成员）更轻松地浏览和理解您的代码。T-SQL语句有一个结构，遵循一目了然的结构使您可以更轻松地查找和确认语句的不同部分,可以加快开发效率。
-
-1 书写标准
-1.1  缩进 
-1) 一般缩进为4个空格。
-2) 不要用Tab制表符来作缩进。
-
-1.2  换行
-1) Select/From/Where/Order by/Groupby等子句必须另起一行写。
-2) Select子句内容如果只有一项，与Select同行写。
-3) Select子句内容如果多于一项，每一项单独占一行，在对应Select的基础上向右缩进4空格。
-4) From子句内容如果只有一项，与From同行写。
-5) From子句内容如果多于一项，每一项单独占一行，在对应From的基础上向右缩进4个空格。
-6) Where子句的条件如果有多项，每一个条件占一行，以AND或者OR开头，在对应Where的基础  上向右缩进4个空格。
-7) (Update)Set子句内容每一项单独占一行，无缩进。
-8) Insert子句内容每个表字段单独占一行，无缩进；values每一项单独占一行，无缩进。
-9) SQL文中间不允许出现空行。
-10) 存储过程或函数输入参数命名以in开头，如@in_Year；输出参数以out开头，如@out_money；局部变量首字母小写，第二个单词起的每个单词的首字母大写，不使用“_”，如@customerCount；
-
-1.3 空格
-1) 连接符or、in、and、以及＝、<=、>=等前后加上一个空格。
-2) 逗号之后必须接一个空格。
-3) 关键字、保留字和左括号之间必须有一个空格。
-
-
-2. 命名规则
-常见命名规则有四种样式：完全大写、完全小写、Pascal 大小写和 Camel 大小写。
-1) Camel 大小写
-标识符的首字母小写，每个后面连接的单词的首字母大写，其余字母小写的书写约定。对于缩写的双字母单词，要求它们出现在标识符首部时全部小写，否则全部大写。
-例如：applicationException id
-
-2) Pascal 大小写
-组成标识符的每个单词的首字母大写，其余字母小写的书写约定。对于缩写的双字母单词，要求全部大写。
-例如：ApplicationExceptionID
-
-3) 匈牙利命名法
-匈牙利命名法由匈牙利程序员发明，他在微软工作了多年，此命名法就是通过微软的各种产品和文档传出来。多数有经验的程序员，不管他们用的是哪门语言，都或多或少在使用它。
-基本原则：变量名 = 属性 ＋ 类型 ＋ 对象描述
-即一个变量名是由三部分信息组成，这样，程序员很容易理解变量的类型、用途，而且便于记忆。
-
-
-3 注释
-1) 对较为复杂的SQL语句加上注释，说明算法、功能。注释风格：注释单独成行、放在语句前面。
-2) 应对不易理解的分支条件表达式加注释。
-3) 对重要的计算应说明其功能。
-4) 过长的函数实现，应将其语句按实现的功能分段加以概括性说明。
-5) 常量及变量注释时，应注释被保存值的含义(必须)，合法取值的范围(可选)。
-6) 可采用单行/多行注释。（-- 或 ）。
-
-3.1 代码头部注释
-1 代码头部注释
-在SQL代码块（sql文件或存储过程）的头部进行注释，标注创建人(Author)、创始日期(Create date)、修改信息(Modify [n])。
-格式：
--- =============================================
--- Author:     
--- Create date:
--- Description:
--- Modify [n]: < Modifier,Date, Description >
--- =============================================
-
-示例：
--- ================================================
--- Author:     Zhanghaifeng
--- Create date: 2006-12-25
--- Description: H2000报关单回执处理
--- Modify [1]:  郑佐, 2006-12-31, 简化逻辑判断流程
--- Modify [2]:  郑佐, 2007-01-20, 更新条件判断
--- ================================================
-注：日期格式使用 yyyy-MM-dd。Modify [n] n代表修改序号，从1开始，每次修改加1。
-
-
-2. TRANSACTION注释
-建议在每个事务的开头进行注释，说明该事务的功能。
--- < Modifier,Date, Description >
-BEGIN TRANSACTION;
-分享：
-3
-
-喜欢
-
-0
-
-赠金笔赠金笔
 
