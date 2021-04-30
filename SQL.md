@@ -2,7 +2,7 @@
 # Table of Contents
 1. [SQL Basic](#ch1)
 2. [SQL Grammer](#ch2)
-3. [Chapter 2 - Data Collection](#ch2)
+3. [SQL Examples](#ch3)
 4. [Chapter 3 - Data Preparation](#ch3)
 5. [Chapter 4 - Data Cleansing: 4C Correcting, Completing, Creating, Converting](#ch4)
 5. [Chapter 5 - Exploratory Data Analysis(EDA)](#ch5)
@@ -219,7 +219,7 @@ TO DISK = 'D:\backups\testDB.bak'
 WITH DIFFERENTIAL;
 ```
 
-4. Create a new table
+4. Create a new table<br>
 Create new
 ```
 CREATE TABLE table_name (
@@ -254,7 +254,7 @@ SELECT customername, contactname
 FROM customers;
 ```
 
-5. Drop a table
+5. Drop a table <br>
 Delete table
 ```
 DROP TABLE table_name;
@@ -265,9 +265,9 @@ Clear but not delete table
 TRUNCATE TABLE table_name;
 ```
 
-6. Alter a table
-Use to add, delete, modity columns or add/drop constraints on an existing table.
-Add column
+6. Alter a table <br>
+Use to add, delete, modity columns or add/drop constraints on an existing table. <br>
+Add column <br>
 ```
 ALTER TABLE Customers
 ADD Email varchar(255);
