@@ -11,12 +11,12 @@
    2.2 &nbsp; [Execution order](#ch2.2) <br>
 3. [SQL Examples](#ch3) <br>
    3.1 &nbsp; [SQL Database](#ch3.1) <br>
-      3.1.1 &nbsp; [Create a database](#ch3.1.1) <br>
-      3.1.2 &nbsp; [Drop a database](#ch3.1.2) <br>
-      3.1.3 &nbsp; [Backup a database](#ch3.1.3) <br>
-      3.1.4 &nbsp; [Create a new table](#ch3.1.4) <br>
-      3.1.5 &nbsp; [Drop a table](#ch3.1.5) <br>
-      3.1.6 &nbsp; [Alter a table](#ch3.1.6) <br>
+   &nbsp; 3.1.1 &nbsp; [Create a database](#ch3.1.1) <br>
+   &nbsp; 3.1.2 &nbsp; [Drop a database](#ch3.1.2) <br>
+   &nbsp; 3.1.3 &nbsp; [Backup a database](#ch3.1.3) <br>
+   &nbsp; 3.1.4 &nbsp; [Create a new table](#ch3.1.4) <br>
+   &nbsp; 3.1.5 &nbsp; [Drop a table](#ch3.1.5) <br>
+   &nbsp; 3.1.6 &nbsp; [Alter a table](#ch3.1.6) <br>
    3.2 &nbsp; [SQL Database](#ch3.1) <br>
 5. 
 
