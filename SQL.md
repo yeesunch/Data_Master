@@ -1,8 +1,8 @@
 # SQL
 # Table of Contents
 1. [SQL Basic](#ch1) <br>
-   1.1 [Definition](#ch1.1) <br>
-   1.2 [Usage](#ch1.2) <br>
+   1.1 &nbsp;&nbsp; [Definition](#ch1.1) <br>
+   1.2 &nbsp;&nbsp; [Usage](#ch1.2) <br>
 3. [SQL Grammer](#ch2)
 4. [SQL Examples](#ch3)
 
