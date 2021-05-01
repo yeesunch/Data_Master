@@ -6,8 +6,12 @@
    1.3 &nbsp; [RDBMS](#ch1.3) <br>
    1.4 &nbsp; [Types of Statements](#ch1.4) <br>
    1.5 &nbsp; [Data Types](#ch1.5) <br>
-3. [SQL Grammer](#ch2)
-4. [SQL Examples](#ch3)
+2. [SQL Grammer](#ch2)
+   3.1 &nbsp; [Syntax](#ch2.1) <br>
+   3.2 &nbsp; [Execution order](#ch2.2) <br>
+3. [SQL Examples](#ch3)
+   3.1 &nbsp; [SQL Database](#ch3.1) <br>
+5. 
 
 
 
@@ -80,7 +84,7 @@ Databases -> Tables -> Columns & Rows
 | ENUM        |                    | Allow to enter                      |
 | SET         | 64                 | Allow to enter multiple             |
 
-
+<br>
 2. Number
 
 | Name        | Size     | Range                                                             | Type                                    |
@@ -94,7 +98,7 @@ Databases -> Tables -> Columns & Rows
 | MEDIUMINT   | 9        | [-2<sup>23</sup>, 2<sup>23</sup> - 1], or [0, 2<sup>24</sup> - 1] |                                         |
 | BIGINT      | 20       | [-2<sup>63</sup>, 2<sup>63</sup> - 1], or [0, 2<sup>64</sup> - 1] |                                         |
 
-
+<br>
 3. Date
 
 | Name        | Fortmat                          | Range                                           |
@@ -109,6 +113,7 @@ Databases -> Tables -> Columns & Rows
 
 <a id="ch2"></a>
 ## 2. SQL Grammer
+<a id="ch2.1"></a>
 ### Syntax
 1. Indentation
     * 4 spaces, do not use TAB
@@ -182,8 +187,8 @@ Transaction:
 -- < Modifier, Date, Description >
 ```
 
-
-6. Execution order
+<a id="ch2.2"></a>
+### Execution order
 
 (8) SELECT (9) DISTINCT <select_list> <br>
 (1) FROM <left_table> <br>
@@ -200,6 +205,7 @@ Transaction:
 
 <a id="ch3"></a>
 ## 3. SQL Examples
+<a id="ch3.1"></a>
 ### SQL Database
 1. Create a new database
 ```
