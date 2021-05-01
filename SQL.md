@@ -115,10 +115,10 @@ Databases -> Tables -> Columns & Rows
 ## 2. SQL Grammer
 <a id="ch2.1"></a>
 ### Syntax
-1. Indentation
+**1. Indentation**
     * 4 spaces, do not use TAB
 
-2. Linefeed
+**2. Linefeed**
     * Clauses requires a new ling (SELECT/FROM/WHERE/ORDER BY/GROUP BY)
     * SELECT/FROM (Clauses within SELECT/FROM)
         * 1 Clause - stay in the same line
@@ -132,12 +132,12 @@ Databases -> Tables -> Columns & Rows
         * Local variable first letter lowercase, first letter from second word uppercase, no '_' allowed, e.g. @customerCount
     * No empty line allowed
     
-3. Space
+**3. Space**
     * Operators - 1 space preceding and 1 space folloing ( OR / IN / AND , = / <= / >= , etc.)
     * Comma - 1 space after , 
     * Left bracket - 1 space between keyword and (
 
-4. Name Rules
+**4. Name Rules**
     * Basic Rules
         * variable_name = attribute + type + description
         * Keyword  - all uppercase, e.g. SELECT
@@ -149,7 +149,7 @@ Databases -> Tables -> Columns & Rows
         * Camel - applicationException, id
         * Pascal - ApplicationException, ID
 
-5. Comment
+**5. Comment**
     * Where to add comments
         * Complex statements, comment before statement
         * Conditions hard to understand
@@ -187,9 +187,9 @@ Transaction:
 -- < Modifier, Date, Description >
 ```
 
+
 <a id="ch2.2"></a>
 ### Execution order
-
 (8) SELECT (9) DISTINCT <select_list> <br>
 (1) FROM <left_table> <br>
 (3) <join_type> JOIN <right_table> <br>
@@ -344,7 +344,7 @@ Indexes are used to retrieve data from the database more quickly than otherwise.
 Updating a table with indexes takes more time than updating a table without (because the indexes also need an update). So, only create indexes on columns that will be frequently searched against. <br>
 
 
-5. Drop a table <br>
+**5. Drop a table** <br>
 ```
 # Delete table
 DROP TABLE table_name;
@@ -353,7 +353,7 @@ DROP TABLE table_name;
 TRUNCATE TABLE table_name;
 ```
 
-6. Alter a table <br>
+**6. Alter a table** <br>
 Use to add, delete, modity columns or add/drop constraints on an existing table. <br>
 ```
 # Add columns
