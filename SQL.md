@@ -18,9 +18,18 @@
    &nbsp; 3.1.5 &nbsp; [Drop a table](#ch3.1.5) <br>
    &nbsp; 3.1.6 &nbsp; [Alter a table](#ch3.1.6) <br>
    3.2 &nbsp; [SQL Database](#ch3.1) <br>
-5. 
-
-
+   &nbsp; 3.1.1 &nbsp; [INSERT INTO](#ch3.1.1) <br>
+   &nbsp; 3.1.2 &nbsp; [UPDATE](#ch3.1.2) <br>
+   &nbsp; 3.1.3 &nbsp; [DELETE](#ch3.1.3) <br>
+   &nbsp; 3.1.4 &nbsp; [LIKE](#ch3.1.4) <br>
+   &nbsp; 3.1.5 &nbsp; [BETWEEN...AND...](#ch3.1.5) <br>
+   &nbsp; 3.1.6 &nbsp; [SELF JOIN](#ch3.1.6) <br>
+   &nbsp; 3.1.7 &nbsp; [UNION](#ch3.1.7) <br>
+   &nbsp; 3.1.8 &nbsp; [EXIST](#ch3.1.8) <br>
+   &nbsp; 3.1.9 &nbsp; [ANY / ALL](#ch3.1.9) <br>
+   &nbsp; 3.1.10 &nbsp; [SELECT INTO](#ch3.1.10) <br>
+   &nbsp; 3.1.11 &nbsp; [NULL Function](#ch3.1.11) <br>
+   &nbsp; 3.1.12 &nbsp; [Operators](#ch3.1.12) <br>
 
 <a id="ch1"></a>
 ## 1. SQL Basic
@@ -630,7 +639,7 @@ SELECT COALESCE(NULL, NULL, NULL, 'WWW', NULL, 'XXX');
 |     %=     |      Modulo equals               |
 |     &=     |      Bitwise AND equals          |
 |     ^-=    |      Bitwise exclusive equals    |
-|     ‘|*=’  |      Bitwise OR equals           |
+|     /*=    |      Bitwise OR equals           |
 
 
 
