@@ -272,7 +272,7 @@ CREATE TABLE table_name (
     ....
 );
 ```
-**Constraints**
+**Constraints** <br>
 &emsp; NOT NULL - Ensures that a column cannot have a NULL value <br>
 &emsp; UNIQUE - Ensures that all values in a column are different <br>
 &emsp; PRIMARY KEY - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table <br>
@@ -299,7 +299,7 @@ CREATE TABLE Persons (
 );
 ```
 
-**Foreigh key**
+**Foreigh key** <br>
 A FOREIGN KEY is a field (or collection of fields) in one table, that refers to the PRIMARY KEY in another table, which is used to prevent actions that would destroy links between tables.
 ```
 CREATE TABLE Orders (
