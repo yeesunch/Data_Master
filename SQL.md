@@ -11,6 +11,8 @@
    2.2 &nbsp; [Execution order](#ch2.2) <br>
 3. [SQL Examples](#ch3) <br>
    3.1 &nbsp; [SQL Database](#ch3.1) <br>
+      3.1.1 &nbsp; [Create a table](#ch3.1.1) <br> 
+   5.2 &nbsp; [SQL Database](#ch3.1) <br>
 5. 
 
 
@@ -207,16 +209,19 @@ Transaction:
 ## 3. SQL Examples
 <a id="ch3.1"></a>
 ### SQL Database
+<a id="ch3.1.1"></a>
 **1. Create a new database**
 ```
 CREATE DATABASE dbname;
 ```
 
+<a id="ch3.1.2"></a>
 **2. Drop a database**
 ```
 DROP DATABASE dbname;
 ```
 
+<a id="ch3.1.3"></a>
 **3. Backup a database** <br>
 Backup to local
 ```
@@ -230,6 +235,7 @@ TO DISK = 'D:\backups\testDB.bak'
 WITH DIFFERENTIAL;
 ```
 
+<a id="ch3.1.4"></a>
 **4. Create a new table** <br>
 Create new
 ```
@@ -335,7 +341,7 @@ DROP FOREIGN KEY FK_PersonOrder;
 Indexes are used to retrieve data from the database **more quickly** than otherwise. The users cannot see the indexes, they are just used to speed up searches/queries. <br>
 Updating a table with indexes takes more time than updating a table without (because the indexes also need an update). So, only create indexes on columns that will be **frequently searched** against. <br>
 
-
+<a id="ch3.1.5"></a>
 **5. Drop a table** <br>
 Delete table
 ```
@@ -346,6 +352,7 @@ Clear but not delete table
 TRUNCATE TABLE table_name;
 ```
 
+<a id="ch3.1.6"></a>
 **6. Alter a table** <br>
 Use to add, delete, modity columns or add/drop constraints on an existing table. <br>
 Add columns
