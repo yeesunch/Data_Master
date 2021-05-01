@@ -1,14 +1,11 @@
 # SQL
 # Table of Contents
 1. [SQL Basic](#ch1)
-2. [SQL Grammer](#ch2)
-3. [SQL Examples](#ch3)
-4. [Chapter 3 - Data Preparation](#ch3)
-5. [Chapter 4 - Data Cleansing: 4C Correcting, Completing, Creating, Converting](#ch4)
-5. [Chapter 5 - Exploratory Data Analysis(EDA)](#ch5)
-6. [Chapter 6 - Data Modeling](#ch6)
-7. [Chapter 7 - Model Validation and Implementation](#ch7)
-8. [Chapter 8 - Model Optimization and Strategization](#ch8)
+   1.1 [Definition](#ch1.1)
+   1.2 [Usage](#ch1.2)
+3. [SQL Grammer](#ch2)
+4. [SQL Examples](#ch3)
+
 
 
 <a id="ch1"></a>
