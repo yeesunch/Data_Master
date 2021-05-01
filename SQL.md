@@ -472,14 +472,14 @@ DROP VIEW view_name;
 <a id="ch3.2"></a>
 ### SQL Statements
 <a id="ch3.2.1"></a>
-**1. Insert Into**
+**1. INSERT INTO**
 ```
 INSERT INTO table_name (column1, column2, column3, ...)
 VALUES (value1, value2, value3, ...);
 ```
 
 <a id="ch3.2.2"></a>
-**2. Update** <br>
+**2. UPDATE** <br>
 If omit the WHERE clause, ALL records will be updated!
 ```
 UPDATE table_name
@@ -498,7 +498,7 @@ WHERE Country='Mexico';
 ```
 
 <a id="ch3.2.3"></a>
-**3. Delete** <br>
+**3. DELETE** <br>
 ```
 DELETE FROM table_name WHERE condition;
 ```
@@ -508,7 +508,7 @@ DELETE FROM table_name;
 ```
 
 <a id="ch3.2.4"></a>
-**4. Like** <br>
+**4. LIKE** <br>
 
 | LIKE Operator                       | Description                                                                  |       
 | ----------------------------------- | ---------------------------------------------------------------------------- |
@@ -519,5 +519,119 @@ DELETE FROM table_name;
 | WHERE CustomerName LIKE 'a_%'	     | Finds any values that start with "a" and are at least 2 characters in length |
 | WHERE CustomerName LIKE 'a__%'	     | Finds any values that start with "a" and are at least 3 characters in length |
 | WHERE ContactName LIKE 'a%o'	     | Finds any values that start with "a" and ends with "o"                       |
+
+
+<a id="ch3.2.5"></a>
+**5. BETWEEN ... AND ...** <br>
+The BETWEEN operator selects values within a given range. The values can be numbers, text, or dates. <br>
+The BETWEEN operator is inclusive: begin and end values are included. <br>
+```
+SELECT column_name(s)
+FROM table_name
+WHERE column_name NOT BETWEEN value1 AND value2;
+```
+
+<a id="ch3.2.6"></a>
+**6. SELF JOIN** <br>
+```
+SELECT column_name(s)
+FROM table1 T1, table1 T2
+WHERE condition;
+```
+
+<a id="ch3.2.7"></a>
+**7. UNION** <br>
+The UNION operator is used to combine the result-set of two or more SELECT statements. <br>
+   &nbsp; Every SELECT statement within UNION must have the same number of columns <br>
+   &nbsp; The columns must also have similar data types <br>
+   &nbsp; The columns in every SELECT statement must also be in the same order <br><br>
+
+UNION
+```
+SELECT column_name(s) FROM table1
+UNION
+SELECT column_name(s) FROM table2;
+```
+
+UNION ALL
+```
+SELECT column_name(s) FROM table1
+UNION ALL
+SELECT column_name(s) FROM table2;
+```
+
+<a id="ch3.2.8"></a>
+**8. EXIST** <br>
+The EXISTS operator is used to test for the existence of any record in a subquery. <br>
+The EXISTS operator returns TRUE if the subquery returns one or more records. <br>
+```
+SELECT column_name(s)
+FROM table_name
+WHERE EXISTS
+(SELECT column_name FROM table_name WHERE condition);
+```
+
+<a id="ch3.2.9"></a>
+**9. ANY / ALL** <br>
+The ANY operator: <br>
+   &nbsp; returns a boolean value as a result <br>
+   &nbsp; returns TRUE if ANY of the subquery values meet the condition <br>
+ANY means that the condition will be true if the operation is true for any of the values in the range.
+
+```
+SELECT column_name(s)
+FROM table_name
+WHERE column_name operator ANY/ALL
+  (SELECT column_name
+  FROM table_name
+  WHERE condition);
+```
+
+<a id="ch3.2.10"></a>
+**10. SELECT INTO** <br>
+The SELECT INTO statement copies data from one table into a new table.
+```
+SELECT column1, column2, column3, ...
+INTO newtable [IN externaldb]
+FROM oldtable
+WHERE condition;
+```
+
+<a id="ch3.2.11"></a>
+**11. NULL Function** <br>
+IFNULL
+```
+IFNULL(True_value, False_value)
+```
+COALESCE(list of values) - return first non-empty value
+```
+SELECT COALESCE(NULL, NULL, NULL, 'WWW', NULL, 'XXX');
+# output 'WWW'
+```
+
+<a id="ch3.2.12"></a>
+**12. Operators** <br>
+
+| Operator   | Description                      |       
+| ---------- | -------------------------------- |
+|     +	    |      Add	                        |
+|     -	    |      Subtract	                  |
+|     *	    |      Multiply	                  |
+|     /	    |      Divide	                     |
+|     %	    |      Modulo                      |
+|     &	    |      Bitwise AND                 |
+|     |	    |      Bitwise OR                  |
+|     ^   	 |      Bitwise exclusive OR        |
+|     <>     |      Not equal to                |
+|     +=     |      Add equals                  |
+|     -=     |      Subtract equals             |
+|     *=     |      Multiply equals             |
+|     /=     |      Divide equals               |
+|     %=     |      Modulo equals               |
+|     &=     |      Bitwise AND equals          |
+|     ^-=    |      Bitwise exclusive equals    |
+|     |*=    |      Bitwise OR equals           |
+
+
 
 
