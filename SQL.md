@@ -6,9 +6,9 @@
    1.3 &nbsp; [RDBMS](#ch1.3) <br>
    1.4 &nbsp; [Types of Statements](#ch1.4) <br>
    1.5 &nbsp; [Data Types](#ch1.5) <br>
-2. [SQL Grammer](#ch2)
-   3.1 &nbsp; [Syntax](#ch2.1) <br>
-   3.2 &nbsp; [Execution order](#ch2.2) <br>
+2. [SQL Grammer](#ch2) <br>
+   2.1 &nbsp; [Syntax](#ch2.1) <br>
+   2.2 &nbsp; [Execution order](#ch2.2) <br>
 3. [SQL Examples](#ch3)
    3.1 &nbsp; [SQL Database](#ch3.1) <br>
 5. 
@@ -207,17 +207,17 @@ Transaction:
 ## 3. SQL Examples
 <a id="ch3.1"></a>
 ### SQL Database
-1. Create a new database
+**1. Create a new database**
 ```
 CREATE DATABASE dbname;
 ```
 
-2. Drop a database
+**2. Drop a database**
 ```
 DROP DATABASE dbname;
 ```
 
-3. Backup a database
+**3. Backup a database**
 ```
 # Backup to local
 BACKUP DATABASE testDB
@@ -229,7 +229,7 @@ TO DISK = 'D:\backups\testDB.bak'
 WITH DIFFERENTIAL;
 ```
 
-4. Create a new table<br>
+**4. Create a new table** 
 ```
 # Create new
 CREATE TABLE table_name (
@@ -306,7 +306,7 @@ DROP CHECK CHK_PersonAge,
 ALTER City DROP DEFAULT;
 ```
 
-Foreigh key
+**Foreigh key**
 ```
 # A FOREIGN KEY is a field (or collection of fields) in one table, that refers to the PRIMARY KEY in another table, which is used to prevent actions that would destroy links 
 # between tables.
@@ -339,11 +339,9 @@ DROP FOREIGN KEY FK_PersonOrder;
 
 ```
 
-Create Index <br>
+**Create Index** <br>
 Indexes are used to retrieve data from the database more quickly than otherwise. The users cannot see the indexes, they are just used to speed up searches/queries. <br>
 Updating a table with indexes takes more time than updating a table without (because the indexes also need an update). So, only create indexes on columns that will be frequently searched against. <br>
-```
-# A FOREI
 
 
 5. Drop a table <br>
