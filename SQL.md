@@ -219,7 +219,7 @@ DROP DATABASE dbname;
 
 **3. Backup a database**
 ```
-# Backup to local
+[//]: # Backup to local
 BACKUP DATABASE testDB
 TO DISK = 'D:\backups\testDB.bak';
 
