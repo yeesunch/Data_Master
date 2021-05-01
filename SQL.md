@@ -272,14 +272,14 @@ CREATE TABLE table_name (
     ....
 );
 ```
-Constraints
-&emsp; NOT NULL - Ensures that a column cannot have a NULL value
-&emsp; UNIQUE - Ensures that all values in a column are different
-&emsp; PRIMARY KEY - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table
-&emsp; FOREIGN KEY - Prevents actions that would destroy links between tables
-&emsp; CHECK - Ensures that the values in a column satisfies a specific condition
-&emsp; DEFAULT - Sets a default value for a column if no value is specified
-&emsp; CREATE INDEX - Used to create and retrieve data from the database very quickly
+**Constraints**
+&emsp; NOT NULL - Ensures that a column cannot have a NULL value <br>
+&emsp; UNIQUE - Ensures that all values in a column are different <br>
+&emsp; PRIMARY KEY - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table <br>
+&emsp; FOREIGN KEY - Prevents actions that would destroy links between tables <br>
+&emsp; CHECK - Ensures that the values in a column satisfies a specific condition <br>
+&emsp; DEFAULT - Sets a default value for a column if no value is specified <br>
+&emsp; CREATE INDEX - Used to create and retrieve data from the database very quickly <br>
 
 ```
 # Example:
@@ -297,28 +297,11 @@ CREATE TABLE Persons (
     CONSTRAINT CHK_Person CHECK (Age>=18 AND City='Sandnes'),
     PRIMARY KEY (ID)
 );
-
-ALTER TABLE Persons
-MODIFY Age int NOT NULL,
-ADD UNIQUE (ID),
-ALTER City SET DEFAULT 'Sandnes',
-ADD CONSTRAINT UC_Person UNIQUE (ID,LastName),
-ADD PRIMARY KEY (ID),
-ADD CONSTRAINT PK_Person PRIMARY KEY (ID,LastName),
-ADD CHECK (Age>=18)
-;
-
-ALTER TABLE Persons
-DROP INDEX UC_Person,
-DROP PRIMARY KEY,
-DROP CHECK CHK_PersonAge,
-ALTER City DROP DEFAULT;
 ```
 
 **Foreigh key**
+A FOREIGN KEY is a field (or collection of fields) in one table, that refers to the PRIMARY KEY in another table, which is used to prevent actions that would destroy links between tables.
 ```
-# A FOREIGN KEY is a field (or collection of fields) in one table, that refers to the PRIMARY KEY in another table, which is used to prevent actions that would destroy links 
-# between tables.
 CREATE TABLE Orders (
     OrderID int NOT NULL,
     OrderNumber int NOT NULL,
@@ -349,44 +332,69 @@ DROP FOREIGN KEY FK_PersonOrder;
 ```
 
 **Create Index** <br>
-Indexes are used to retrieve data from the database more quickly than otherwise. The users cannot see the indexes, they are just used to speed up searches/queries. <br>
-Updating a table with indexes takes more time than updating a table without (because the indexes also need an update). So, only create indexes on columns that will be frequently searched against. <br>
+Indexes are used to retrieve data from the database **more quickly** than otherwise. The users cannot see the indexes, they are just used to speed up searches/queries. <br>
+Updating a table with indexes takes more time than updating a table without (because the indexes also need an update). So, only create indexes on columns that will be **frequently searched** against. <br>
 
 
 **5. Drop a table** <br>
+Delete table
 ```
-# Delete table
 DROP TABLE table_name;
-
-# Clear but not delete table
+```
+Clear but not delete table
+```
 TRUNCATE TABLE table_name;
 ```
 
 **6. Alter a table** <br>
 Use to add, delete, modity columns or add/drop constraints on an existing table. <br>
+Add columns
 ```
-# Add columns
 ALTER TABLE Customers
 ADD Email varchar(255);
+
 # Example:
 ALTER TABLE Customers
 ADD COLUMN NewCol varchar(255),
 ADD COLUMN NewDate Date;
-
-# Modify column
-ALTER TABLE table_name
-MODIFY COLUMN column_name datatype;
-# PostgreSQL
-ALTER TABLE assets 
-ALTER COLUMN asset_no TYPE INT;
-
-# Drop columns
-ALTER TABLE Persons
-DROP COLUMN DateOfBirth;
-
 ```
 
+Modify column
+```
+ALTER TABLE table_name
+MODIFY COLUMN column_name datatype;
+```
 
+PostgreSQL
+```
+ALTER TABLE assets 
+ALTER COLUMN asset_no TYPE INT;
+```
+
+Drop columns
+```
+ALTER TABLE Persons
+DROP COLUMN DateOfBirth;
+```
+
+With constraints
+```
+ALTER TABLE Persons
+MODIFY Age int NOT NULL,
+ADD UNIQUE (ID),
+ALTER City SET DEFAULT 'Sandnes',
+ADD CONSTRAINT UC_Person UNIQUE (ID,LastName),
+ADD PRIMARY KEY (ID),
+ADD CONSTRAINT PK_Person PRIMARY KEY (ID,LastName),
+ADD CHECK (Age>=18)
+;
+
+ALTER TABLE Persons
+DROP INDEX UC_Person,
+DROP PRIMARY KEY,
+DROP CHECK CHK_PersonAge,
+ALTER City DROP DEFAULT;
+```
 
 
 
