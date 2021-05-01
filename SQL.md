@@ -9,7 +9,7 @@
 2. [SQL Grammer](#ch2) <br>
    2.1 &nbsp; [Syntax](#ch2.1) <br>
    2.2 &nbsp; [Execution order](#ch2.2) <br>
-3. [SQL Examples](#ch3)
+3. [SQL Examples](#ch3) <br>
    3.1 &nbsp; [SQL Database](#ch3.1) <br>
 5. 
 
@@ -218,12 +218,13 @@ DROP DATABASE dbname;
 ```
 
 **3. Backup a database**
+Backup to local
 ```
-[//]: # Backup to local
 BACKUP DATABASE testDB
 TO DISK = 'D:\backups\testDB.bak';
-
-# Backup with differential part
+```
+Backup with differential part
+```
 BACKUP DATABASE testDB
 TO DISK = 'D:\backups\testDB.bak'
 WITH DIFFERENTIAL;
