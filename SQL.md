@@ -217,7 +217,7 @@ CREATE DATABASE dbname;
 DROP DATABASE dbname;
 ```
 
-**3. Backup a database**
+**3. Backup a database** <br>
 Backup to local
 ```
 BACKUP DATABASE testDB
@@ -230,15 +230,16 @@ TO DISK = 'D:\backups\testDB.bak'
 WITH DIFFERENTIAL;
 ```
 
-**4. Create a new table** 
+**4. Create a new table** <br>
+Create new
 ```
-# Create new
 CREATE TABLE table_name (
     column1 datatype,
     column2 datatype,
     column3 datatype,
    ....
 );
+
 # Example:
 CREATE TABLE Persons (
     PersonID int,
@@ -247,33 +248,40 @@ CREATE TABLE Persons (
     Address varchar(255),
     City varchar(255)
 );
+```
 
-# Create from existing
+Create from existing
+```
 CREATE TABLE new_table AS
     SELECT column1, column2,...
     FROM existing_table
     WHERE ....;
+
 # Example:
 CREATE TABLE TestTable AS
 SELECT customername, contactname
 FROM customers;
+```
 
-# Create with constraints
+Create with constraints
+```
 CREATE TABLE table_name (
     column1 datatype constraint,
     column2 datatype constraint,
     column3 datatype constraint,
     ....
 );
-# Constraints
-# NOT NULL - Ensures that a column cannot have a NULL value
-# UNIQUE - Ensures that all values in a column are different
-# PRIMARY KEY - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table
-# FOREIGN KEY - Prevents actions that would destroy links between tables
-# CHECK - Ensures that the values in a column satisfies a specific condition
-# DEFAULT - Sets a default value for a column if no value is specified
-# CREATE INDEX - Used to create and retrieve data from the database very quickly
+```
+Constraints
+&emsp; NOT NULL - Ensures that a column cannot have a NULL value
+&emsp; UNIQUE - Ensures that all values in a column are different
+&emsp; PRIMARY KEY - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table
+&emsp; FOREIGN KEY - Prevents actions that would destroy links between tables
+&emsp; CHECK - Ensures that the values in a column satisfies a specific condition
+&emsp; DEFAULT - Sets a default value for a column if no value is specified
+&emsp; CREATE INDEX - Used to create and retrieve data from the database very quickly
 
+```
 # Example:
 CREATE TABLE Persons (
     ID int NOT NULL,
