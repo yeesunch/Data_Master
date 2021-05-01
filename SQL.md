@@ -18,18 +18,18 @@
    &nbsp; 3.1.5 &nbsp; [Drop a table](#ch3.1.5) <br>
    &nbsp; 3.1.6 &nbsp; [Alter a table](#ch3.1.6) <br>
    3.2 &nbsp; [SQL Database](#ch3.1) <br>
-   &nbsp; 3.1.1 &nbsp; [INSERT INTO](#ch3.1.1) <br>
-   &nbsp; 3.1.2 &nbsp; [UPDATE](#ch3.1.2) <br>
-   &nbsp; 3.1.3 &nbsp; [DELETE](#ch3.1.3) <br>
-   &nbsp; 3.1.4 &nbsp; [LIKE](#ch3.1.4) <br>
-   &nbsp; 3.1.5 &nbsp; [BETWEEN...AND...](#ch3.1.5) <br>
-   &nbsp; 3.1.6 &nbsp; [SELF JOIN](#ch3.1.6) <br>
-   &nbsp; 3.1.7 &nbsp; [UNION](#ch3.1.7) <br>
-   &nbsp; 3.1.8 &nbsp; [EXIST](#ch3.1.8) <br>
-   &nbsp; 3.1.9 &nbsp; [ANY / ALL](#ch3.1.9) <br>
-   &nbsp; 3.1.10 &nbsp; [SELECT INTO](#ch3.1.10) <br>
-   &nbsp; 3.1.11 &nbsp; [NULL Function](#ch3.1.11) <br>
-   &nbsp; 3.1.12 &nbsp; [Operators](#ch3.1.12) <br>
+   &nbsp; 3.2.1 &nbsp; [INSERT INTO](#ch3.2.1) <br>
+   &nbsp; 3.2.2 &nbsp; [UPDATE](#ch3.2.2) <br>
+   &nbsp; 3.2.3 &nbsp; [DELETE](#ch3.2.3) <br>
+   &nbsp; 3.2.4 &nbsp; [LIKE](#ch3.2.4) <br>
+   &nbsp; 3.2.5 &nbsp; [BETWEEN...AND...](#ch3.2.5) <br>
+   &nbsp; 3.2.6 &nbsp; [SELF JOIN](#ch3.2.6) <br>
+   &nbsp; 3.2.7 &nbsp; [UNION](#ch3.2.7) <br>
+   &nbsp; 3.2.8 &nbsp; [EXIST](#ch3.2.8) <br>
+   &nbsp; 3.2.9 &nbsp; [ANY / ALL](#ch3.2.9) <br>
+   &nbsp; 3.2.10 &nbsp; [SELECT INTO](#ch3.2.10) <br>
+   &nbsp; 3.2.11 &nbsp; [NULL Function](#ch3.2.11) <br>
+   &nbsp; 3.2.12 &nbsp; [Operators](#ch3.2.12) <br>
 
 <a id="ch1"></a>
 ## 1. SQL Basic
