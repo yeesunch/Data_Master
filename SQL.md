@@ -1,8 +1,11 @@
 # SQL
 # Table of Contents
 1. [SQL Basic](#ch1) <br>
-   1.1 &nbsp;&nbsp; [Definition](#ch1.1) <br>
-   1.2 &nbsp;&nbsp; [Usage](#ch1.2) <br>
+   1.1 &nbsp; [Definition](#ch1.1) <br>
+   1.2 &nbsp; [Usage](#ch1.2) <br>
+   1.3 &nbsp; [RDBMS](#ch1.3) <br>
+   1.4 &nbsp; [Types of Statements](#ch1.4) <br>
+   1.5 &nbsp; [Data Types](#ch1.5) <br>
 3. [SQL Grammer](#ch2)
 4. [SQL Examples](#ch3)
 
