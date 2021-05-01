@@ -208,12 +208,11 @@ DROP DATABASE dbname;
 
 3. Backup a database
 ```
+# Backup to local
 BACKUP DATABASE testDB
 TO DISK = 'D:\backups\testDB.bak';
-```
 
-Back up with differential part
-```
+# Back up with differential part
 BACKUP DATABASE testDB
 TO DISK = 'D:\backups\testDB.bak'
 WITH DIFFERENTIAL;
@@ -228,9 +227,7 @@ CREATE TABLE table_name (
     column3 datatype,
    ....
 );
-```
-Example:
-```
+# Example:
 CREATE TABLE Persons (
     PersonID int,
     LastName varchar(255),
@@ -246,34 +243,45 @@ CREATE TABLE new_table AS
     SELECT column1, column2,...
     FROM existing_table
     WHERE ....;
-```
-Example:
-```
+# Example:
 CREATE TABLE TestTable AS
 SELECT customername, contactname
 FROM customers;
 ```
 
 5. Drop a table <br>
-Delete table
 ```
+# Delete table
 DROP TABLE table_name;
-```
 
-Clear but not delete table
-```
+# Clear but not delete table
 TRUNCATE TABLE table_name;
 ```
 
 6. Alter a table <br>
 Use to add, delete, modity columns or add/drop constraints on an existing table. <br>
-Add column <br>
 ```
+# Add columns
 ALTER TABLE Customers
 ADD Email varchar(255);
-```
-Drop column
-```
+# Example:
 ALTER TABLE Customers
-DROP COLUMN Email;
+ADD COLUMN NewCol varchar(255),
+ADD COLUMN NewDate Date;
+
+# Modify column
+ALTER TABLE table_name
+MODIFY COLUMN column_name datatype;
+# PostgreSQL
+ALTER TABLE assets 
+ALTER COLUMN asset_no TYPE INT;
+
+# Drop columns
+ALTER TABLE Persons
+DROP COLUMN DateOfBirth;
 ```
+
+
+
+
+
