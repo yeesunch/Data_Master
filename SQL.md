@@ -212,15 +212,15 @@ DROP DATABASE dbname;
 BACKUP DATABASE testDB
 TO DISK = 'D:\backups\testDB.bak';
 
-# Back up with differential part
+# Backup with differential part
 BACKUP DATABASE testDB
 TO DISK = 'D:\backups\testDB.bak'
 WITH DIFFERENTIAL;
 ```
 
 4. Create a new table<br>
-Create new
 ```
+# Create new
 CREATE TABLE table_name (
     column1 datatype,
     column2 datatype,
@@ -235,10 +235,8 @@ CREATE TABLE Persons (
     Address varchar(255),
     City varchar(255)
 );
-```
 
-Create from existing
-```
+# Create from existing
 CREATE TABLE new_table AS
     SELECT column1, column2,...
     FROM existing_table
@@ -247,7 +245,95 @@ CREATE TABLE new_table AS
 CREATE TABLE TestTable AS
 SELECT customername, contactname
 FROM customers;
+
+# Create with constraints
+CREATE TABLE table_name (
+    column1 datatype constraint,
+    column2 datatype constraint,
+    column3 datatype constraint,
+    ....
+);
+# Constraints
+# NOT NULL - Ensures that a column cannot have a NULL value
+# UNIQUE - Ensures that all values in a column are different
+# PRIMARY KEY - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table
+# FOREIGN KEY - Prevents actions that would destroy links between tables
+# CHECK - Ensures that the values in a column satisfies a specific condition
+# DEFAULT - Sets a default value for a column if no value is specified
+# CREATE INDEX - Used to create and retrieve data from the database very quickly
+
+# Example:
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    City varchar(255) DEFAULT 'Sandnes',
+    OrderDate date DEFAULT GETDATE(),
+    Age int,
+    CHECK (Age>=18),
+    UNIQUE (ID),
+    CONSTRAINT UC_Person UNIQUE (ID,LastName), # constraint on multiple columns,
+    CONSTRAINT PK_Person PRIMARY KEY (ID,LastName), # set primary key here
+    CONSTRAINT CHK_Person CHECK (Age>=18 AND City='Sandnes'),
+    PRIMARY KEY (ID)
+);
+
+ALTER TABLE Persons
+MODIFY Age int NOT NULL,
+ADD UNIQUE (ID),
+ALTER City SET DEFAULT 'Sandnes',
+ADD CONSTRAINT UC_Person UNIQUE (ID,LastName),
+ADD PRIMARY KEY (ID),
+ADD CONSTRAINT PK_Person PRIMARY KEY (ID,LastName),
+ADD CHECK (Age>=18)
+;
+
+ALTER TABLE Persons
+DROP INDEX UC_Person,
+DROP PRIMARY KEY,
+DROP CHECK CHK_PersonAge,
+ALTER City DROP DEFAULT;
 ```
+
+Foreigh key
+```
+# A FOREIGN KEY is a field (or collection of fields) in one table, that refers to the PRIMARY KEY in another table, which is used to prevent actions that would destroy links 
+# between tables.
+CREATE TABLE Orders (
+    OrderID int NOT NULL,
+    OrderNumber int NOT NULL,
+    PersonID int,
+    PRIMARY KEY (OrderID),
+    FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
+);
+
+CREATE TABLE Orders (
+    OrderID int NOT NULL,
+    OrderNumber int NOT NULL,
+    PersonID int,
+    PRIMARY KEY (OrderID),
+    CONSTRAINT FK_PersonOrder FOREIGN KEY (PersonID)
+    REFERENCES Persons(PersonID)
+);
+
+ALTER TABLE Orders
+ADD FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
+
+ALTER TABLE Orders
+ADD CONSTRAINT FK_PersonOrder
+FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
+
+ALTER TABLE Orders
+DROP FOREIGN KEY FK_PersonOrder;
+
+```
+
+Create Index <br>
+Indexes are used to retrieve data from the database more quickly than otherwise. The users cannot see the indexes, they are just used to speed up searches/queries. <br>
+Updating a table with indexes takes more time than updating a table without (because the indexes also need an update). So, only create indexes on columns that will be frequently searched against. <br>
+```
+# A FOREI
+
 
 5. Drop a table <br>
 ```
@@ -279,6 +365,7 @@ ALTER COLUMN asset_no TYPE INT;
 # Drop columns
 ALTER TABLE Persons
 DROP COLUMN DateOfBirth;
+
 ```
 
 
