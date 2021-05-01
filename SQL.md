@@ -13,11 +13,13 @@
 
 <a id="ch1"></a>
 ## 1. SQL Basic
+<a id="ch1,1"></a>
 ### Definition
 **SQL** stands for **Structured Query Language**, which is used to access and manipulate databases. <br>
 According to ANSI (American National Standards Institute), it is the standard language for **RDBMS** (rational database management systems). <br>
 <br><br>
 
+<a id="ch1.2"></a>
 ### Usage
 * Execute queries against a database
 * Create databases/tables
@@ -27,11 +29,13 @@ According to ANSI (American National Standards Institute), it is the standard la
 * Set permissions on tables, procedures and views
 <br><br>
 
+<a id="ch1.3"></a>
 ### RDBMS
 RDBMS (Ralational Database Management System) is the basis for SQL (and other databases systems such as MS SQL Server, MySQL, Oracle, Microsoft Access, IBM DB2) 
 Databases -> Tables -> Columns & Rows
 <br><br>
 
+<a id="ch1.4"></a>
 ### Types of Statements
 1. DQL(Data Query Language)
     * select
@@ -58,6 +62,7 @@ Databases -> Tables -> Columns & Rows
     * savepoint
 <br><br>
 
+<a id="ch1.5"></a>
 ### Data Types
 1. Text
 
