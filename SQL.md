@@ -630,7 +630,7 @@ SELECT COALESCE(NULL, NULL, NULL, 'WWW', NULL, 'XXX');
 |     %=     |      Modulo equals               |
 |     &=     |      Bitwise AND equals          |
 |     ^-=    |      Bitwise exclusive equals    |
-|     |*=    |      Bitwise OR equals           |
+|     ‘|*=’  |      Bitwise OR equals           |
 
 
 
