@@ -11,8 +11,13 @@
    2.2 &nbsp; [Execution order](#ch2.2) <br>
 3. [SQL Examples](#ch3) <br>
    3.1 &nbsp; [SQL Database](#ch3.1) <br>
-      3.1.1 &nbsp; [Create a table](#ch3.1.1) <br> 
-   5.2 &nbsp; [SQL Database](#ch3.1) <br>
+      3.1.1 &nbsp; [Create a database](#ch3.1.1) <br>
+      3.1.2 &nbsp; [Drop a database](#ch3.1.2) <br>
+      3.1.3 &nbsp; [Backup a database](#ch3.1.3) <br>
+      3.1.4 &nbsp; [Create a new table](#ch3.1.4) <br>
+      3.1.5 &nbsp; [Drop a table](#ch3.1.5) <br>
+      3.1.6 &nbsp; [Alter a table](#ch3.1.6) <br>
+   3.2 &nbsp; [SQL Database](#ch3.1) <br>
 5. 
 
 
@@ -340,6 +345,41 @@ DROP FOREIGN KEY FK_PersonOrder;
 **Create Index** <br>
 Indexes are used to retrieve data from the database **more quickly** than otherwise. The users cannot see the indexes, they are just used to speed up searches/queries. <br>
 Updating a table with indexes takes more time than updating a table without (because the indexes also need an update). So, only create indexes on columns that will be **frequently searched** against. <br>
+```
+CREATE UNIQUE INDEX index_name
+ON table_name (column1, column2, ...);
+
+# Example 1
+CREATE INDEX idx_lastname
+ON Persons (LastName);
+
+# Example 2
+CREATE INDEX idx_pname
+ON Persons (LastName, FirstName);
+
+# Drop Index
+ALTER TABLE table_name
+DROP INDEX index_name;
+```
+
+**Auto Increment** <br>
+Auto-increment allows a unique number to be generated automatically when a new record is inserted into a table. <br>
+Often this is the primary key field that we would like to be created automatically every time a new record is inserted.
+```
+CREATE TABLE Persons (
+    Personid int NOT NULL AUTO_INCREMENT,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    PRIMARY KEY (Personid)
+);
+
+ALTER TABLE Persons AUTO_INCREMENT=100;
+
+# No need to insert values for increment columns
+INSERT INTO Persons (FirstName,LastName)
+VALUES ('Lars','Monsen');
+```
 
 <a id="ch3.1.5"></a>
 **5. Drop a table** <br>
@@ -403,5 +443,81 @@ DROP CHECK CHK_PersonAge,
 ALTER City DROP DEFAULT;
 ```
 
+<a id="ch3.1.7"></a>
+**6. Create view statement** <br>
+A view is a virtual table based on the result-set of an SQL statement. <br><br>
+
+Create a view
+```
+CREATE VIEW view_name AS
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+```
+
+Update a view
+```
+CREATE OR REPLACE VIEW view_name AS
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+```
+
+Drop a view
+```
+DROP VIEW view_name;
+```
+
+
+<a id="ch3.2"></a>
+### SQL Statements
+<a id="ch3.2.1"></a>
+**1. Insert Into**
+```
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);
+```
+
+<a id="ch3.2.2"></a>
+**2. Update** <br>
+If omit the WHERE clause, ALL records will be updated!
+```
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+
+# Example
+UPDATE Customers
+SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
+WHERE CustomerID = 1;
+
+# Example - update multiple records
+UPDATE Customers
+SET ContactName='Juan'
+WHERE Country='Mexico';
+```
+
+<a id="ch3.2.3"></a>
+**3. Delete** <br>
+```
+DELETE FROM table_name WHERE condition;
+```
+Delete all
+```
+DELETE FROM table_name;
+```
+
+<a id="ch3.2.4"></a>
+**4. Like** <br>
+
+| LIKE Operator                       | Description         |       
+| ----------------------------------- | -------------------------------------- |
+| WHERE CustomerName LIKE 'a%'        | 2<sup>16</sup> - 1   |
+| WHERE CustomerName LIKE '%a'	     | Finds any values that end with "a"      |                
+| WHERE CustomerName LIKE '%or%'	     | Finds any values that have "or" in any position |
+| WHERE CustomerName LIKE '_r%'	     | Finds any values that have "r" in the second position  |
+| WHERE CustomerName LIKE 'a_%'	     | Finds any values that start with "a" and are at least 2 characters in length |
+| WHERE CustomerName LIKE 'a__%'	     | Finds any values that start with "a" and are at least 3 characters in length |
+| WHERE ContactName LIKE 'a%o'	     | Finds any values that start with "a" and ends with "o"  |
 
 
