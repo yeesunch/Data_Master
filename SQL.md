@@ -658,11 +658,11 @@ WITH cte_alias (column_aliases) AS (
 SELECT * FROM cte_alias
 ```
 Must not contain
-   * Aggregate functions such as SUM()
-   * Window functions
-   * GROUP BY
-   * ORDER BY
-   * DISTINCT
+   Aggregate functions such as SUM()
+    Window functions
+    GROUP BY
+    ORDER BY
+    DISTINCT
 ```
 Example 1:
 WITH RECURSIVE cte (n) AS
