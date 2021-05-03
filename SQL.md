@@ -131,10 +131,12 @@ Databases -> Tables -> Columns & Rows
 ## 2. SQL Grammer
 <a id="ch2.1"></a>
 ### Syntax
-**1. Indentation** <br>
+<a id="ch2.1.1"></a>
+**1. Indentation**
     * 4 spaces, do not use TAB
 
-**2. Linefeed** <br>
+<a id="ch2.1.2"></a>
+**2. Linefeed**
     * Clauses requires a new ling (SELECT/FROM/WHERE/ORDER BY/GROUP BY)
     * SELECT/FROM (Clauses within SELECT/FROM)
         * 1 Clause - stay in the same line
@@ -147,12 +149,14 @@ Databases -> Tables -> Columns & Rows
         * Input start with in and output start with out, e.g. @in_Year, @out_Money
         * Local variable first letter lowercase, first letter from second word uppercase, no '_' allowed, e.g. @customerCount
     * No empty line allowed
-    
-**3. Space** <br>
+
+<a id="ch2.1.3"></a>
+**3. Space**
     * Operators - 1 space preceding and 1 space folloing ( OR / IN / AND , = / <= / >= , etc.)
     * Comma - 1 space after , 
     * Left bracket - 1 space between keyword and (
 
+<a id="ch2.1.4"></a>
 **4. Name Rules** <br>
     * Basic Rules
         * variable_name = attribute + type + description
@@ -165,6 +169,7 @@ Databases -> Tables -> Columns & Rows
         * Camel - applicationException, id
         * Pascal - ApplicationException, ID
 
+<a id="ch2.1.5"></a>
 **5. Comment** <br>
     * Where to add comments
         * Complex statements, comment before statement
