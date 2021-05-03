@@ -657,7 +657,7 @@ Format
 WITH cte_alias (column_aliases) AS (
    cte_query_definition --initialization  
    UNION ALL  
-   cte_query_definition2 --recursive execution
+   cte_query_definition2 LIMIT N --recursive execution N times (N entries)
    )  
 
 SELECT * FROM cte_alias
