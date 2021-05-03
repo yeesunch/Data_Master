@@ -137,52 +137,52 @@ Databases -> Tables -> Columns & Rows
 
 <a id="ch2.1.2"></a>
 **2. Linefeed**
-    * Clauses requires a new ling (SELECT/FROM/WHERE/ORDER BY/GROUP BY)
-    * SELECT/FROM (Clauses within SELECT/FROM)
-        * 1 Clause - stay in the same line
-        * Multiple Clauses - each requires a new line, with 4 more spaces (from SELECT/FROM)
-    * WHERE (Conditions within WHERE)
-        * Each condition requires a new line, start with AND or OR, with 4 more spaces (from WHERE)
-    * (UPDATE) SET - each clause requires a new line, with no indent
-    * INSERT - each column name requires a new line, with no indent; each value requires a new line, with no indent
-    * Parameters in store process or function
-        * Input start with in and output start with out, e.g. @in_Year, @out_Money
-        * Local variable first letter lowercase, first letter from second word uppercase, no '_' allowed, e.g. @customerCount
-    * No empty line allowed
+* Clauses requires a new ling (SELECT/FROM/WHERE/ORDER BY/GROUP BY)
+* SELECT/FROM (Clauses within SELECT/FROM)
+   * 1 Clause - stay in the same line
+   * Multiple Clauses - each requires a new line, with 4 more spaces (from SELECT/FROM)
+* WHERE (Conditions within WHERE)
+   * Each condition requires a new line, start with AND or OR, with 4 more spaces (from WHERE)
+* (UPDATE) SET - each clause requires a new line, with no indent
+* INSERT - each column name requires a new line, with no indent; each value requires a new line, with no indent
+* Parameters in store process or function
+   * Input start with in and output start with out, e.g. @in_Year, @out_Money
+   * Local variable first letter lowercase, first letter from second word uppercase, no '_' allowed, e.g. @customerCount
+* No empty line allowed
 
 <a id="ch2.1.3"></a>
 **3. Space**
-    * Operators - 1 space preceding and 1 space folloing ( OR / IN / AND , = / <= / >= , etc.)
-    * Comma - 1 space after , 
-    * Left bracket - 1 space between keyword and (
+* Operators - 1 space preceding and 1 space folloing ( OR / IN / AND , = / <= / >= , etc.)
+* Comma - 1 space after , 
+* Left bracket - 1 space between keyword and (
 
 <a id="ch2.1.4"></a>
 **4. Name Rules** <br>
-    * Basic Rules
-        * variable_name = attribute + type + description
-        * Keyword  - all uppercase, e.g. SELECT
-        * Table name -  first letter uppercase, e.g. Tablename
-        * Column name - all lowercase, e.g. colname
-    * 4 common methods
-        * ALL UPPERCASE
-        * all lowercase
-        * Camel - applicationException, id
-        * Pascal - ApplicationException, ID
+* Basic Rules
+   * variable_name = attribute + type + description
+   * Keyword  - all uppercase, e.g. SELECT
+   * Table name -  first letter uppercase, e.g. Tablename
+   * Column name - all lowercase, e.g. colname
+* 4 common methods
+   * ALL UPPERCASE
+   * all lowercase
+   * Camel - applicationException, id
+   * Pascal - ApplicationException, ID
 
 <a id="ch2.1.5"></a>
 **5. Comment** <br>
-    * Where to add comments
-        * Complex statements, comment before statement
-        * Conditions hard to understand
-        * Important calculation
-        * Long function, comment by paragraph
-        * Variable, comment on its value and range
-    * How to add comments - 3 ways
-        * '## comment1'
-        * '-- comment2'
-        * '/* comment3 */'
-    * Header - Author + Create date + Modification
-    * Transaction - state the function of the section
+* Where to add comments
+   * Complex statements, comment before statement
+   * Conditions hard to understand
+   * Important calculation
+   * Long function, comment by paragraph
+   * Variable, comment on its value and range
+* How to add comments - 3 ways
+   * '## comment1'
+   * '-- comment2'
+   * '/* comment3 */'
+* Header - Author + Create date + Modification
+* Transaction - state the function of the section
 ```
 Header:
 -- =============================================
@@ -298,13 +298,13 @@ CREATE TABLE table_name (
 );
 ```
 **Constraints** <br>
-&emsp; NOT NULL - Ensures that a column cannot have a NULL value <br>
-&emsp; UNIQUE - Ensures that all values in a column are different <br>
-&emsp; PRIMARY KEY - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table <br>
-&emsp; FOREIGN KEY - Prevents actions that would destroy links between tables <br>
-&emsp; CHECK - Ensures that the values in a column satisfies a specific condition <br>
-&emsp; DEFAULT - Sets a default value for a column if no value is specified <br>
-&emsp; CREATE INDEX - Used to create and retrieve data from the database very quickly <br>
+* NOT NULL - Ensures that a column cannot have a NULL value <br>
+* UNIQUE - Ensures that all values in a column are different <br>
+* PRIMARY KEY - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table <br>
+* FOREIGN KEY - Prevents actions that would destroy links between tables <br>
+* CHECK - Ensures that the values in a column satisfies a specific condition <br>
+* DEFAULT - Sets a default value for a column if no value is specified <br>
+* CREATE INDEX - Used to create and retrieve data from the database very quickly <br>
 
 ```
 # Example:
@@ -555,10 +555,10 @@ WHERE condition;
 
 <a id="ch3.2.7"></a>
 **7. UNION** <br>
-The UNION operator is used to combine the result-set of two or more SELECT statements. <br>
-   &nbsp; Every SELECT statement within UNION must have the same number of columns <br>
-   &nbsp; The columns must also have similar data types <br>
-   &nbsp; The columns in every SELECT statement must also be in the same order <br><br>
+The UNION operator is used to combine the result-set of two or more SELECT statements.
+* Every SELECT statement within UNION must have the same number of columns
+* The columns must also have similar data types
+* The columns in every SELECT statement must also be in the same order <br>
 
 UNION
 ```
@@ -587,9 +587,9 @@ WHERE EXISTS
 
 <a id="ch3.2.9"></a>
 **9. ANY / ALL** <br>
-The ANY operator: <br>
-   &nbsp; returns a boolean value as a result <br>
-   &nbsp; returns TRUE if ANY of the subquery values meet the condition <br>
+The ANY operator:
+* returns a boolean value as a result
+* returns TRUE if ANY of the subquery values meet the condition
 ANY means that the condition will be true if the operation is true for any of the values in the range.
 
 ```
@@ -663,11 +663,11 @@ WITH cte_alias (column_aliases) AS (
 SELECT * FROM cte_alias
 ```
 Must not contain
-   Aggregate functions such as SUM()
-    Window functions
-    GROUP BY
-    ORDER BY
-    DISTINCT
+* Aggregate functions such as SUM()
+* Window functions
+* GROUP BY
+* ORDER BY
+* DISTINCT
 ```
 Example 1:
 WITH RECURSIVE cte (n) AS
