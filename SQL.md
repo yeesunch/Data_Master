@@ -643,4 +643,36 @@ SELECT COALESCE(NULL, NULL, NULL, 'WWW', NULL, 'XXX');
 
 
 
+<a id="ch3.3"></a>
+### SQL Advanced
+<a id="ch3.3.1"></a>
+**1. Recursive CTE**
+Format
+```
+WITH cte_alias (column_aliases) AS (
+   cte_query_definition --initialization  
+   UNION ALL  
+   cte_query_definition2 --recursive execution
+   )  
 
+SELECT * FROM cte_alias
+```
+Must not contain
+   * Aggregate functions such as SUM()
+   * Window functions
+   * GROUP BY
+   * ORDER BY
+   * DISTINCT
+```
+Example 1:
+WITH RECURSIVE cte (n) AS
+(
+  SELECT 1
+  UNION ALL
+  SELECT n + 1 FROM cte WHERE n < 5
+)
+SELECT * FROM cte;
+
+-- Output n = 1,2,3,4,5
+
+```
