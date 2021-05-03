@@ -133,7 +133,7 @@ Databases -> Tables -> Columns & Rows
 ### Syntax
 <a id="ch2.1.1"></a>
 **1. Indentation**
-    * 4 spaces, do not use TAB
+* 4 spaces, do not use TAB
 
 <a id="ch2.1.2"></a>
 **2. Linefeed**
