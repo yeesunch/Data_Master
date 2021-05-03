@@ -11,7 +11,7 @@
    2.2 &nbsp; [Execution order](#ch2.2) <br>
 3. [SQL Examples](#ch3) <br>
    3.1 &nbsp; [SQL Database](#ch3.1) <br>
-  * 3.1.1 &nbsp; [Create a database](#ch3.1.1) <br>
+   &nbsp; 3.1.1 &nbsp; [Create a database](#ch3.1.1) <br>
    &nbsp; 3.1.2 &nbsp; [Drop a database](#ch3.1.2) <br>
    &nbsp; 3.1.3 &nbsp; [Backup a database](#ch3.1.3) <br>
    &nbsp; 3.1.4 &nbsp; [Create a new table](#ch3.1.4) <br>
@@ -131,10 +131,10 @@ Databases -> Tables -> Columns & Rows
 ## 2. SQL Grammer
 <a id="ch2.1"></a>
 ### Syntax
-**1. Indentation**
+**1. Indentation** <br>
     * 4 spaces, do not use TAB
 
-**2. Linefeed**
+**2. Linefeed** <br>
     * Clauses requires a new ling (SELECT/FROM/WHERE/ORDER BY/GROUP BY)
     * SELECT/FROM (Clauses within SELECT/FROM)
         * 1 Clause - stay in the same line
@@ -148,12 +148,12 @@ Databases -> Tables -> Columns & Rows
         * Local variable first letter lowercase, first letter from second word uppercase, no '_' allowed, e.g. @customerCount
     * No empty line allowed
     
-**3. Space**
+**3. Space** <br>
     * Operators - 1 space preceding and 1 space folloing ( OR / IN / AND , = / <= / >= , etc.)
     * Comma - 1 space after , 
     * Left bracket - 1 space between keyword and (
 
-**4. Name Rules**
+**4. Name Rules** <br>
     * Basic Rules
         * variable_name = attribute + type + description
         * Keyword  - all uppercase, e.g. SELECT
@@ -165,7 +165,7 @@ Databases -> Tables -> Columns & Rows
         * Camel - applicationException, id
         * Pascal - ApplicationException, ID
 
-**5. Comment**
+**5. Comment** <br>
     * Where to add comments
         * Complex statements, comment before statement
         * Conditions hard to understand
